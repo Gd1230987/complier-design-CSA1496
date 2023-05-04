@@ -1,0 +1,22 @@
+#include <stdio.h>
+#include <ctype.h>
+#include <string.h>
+
+#define MAX_TOKEN_LENGTH 100
+
+enum TokenType {
+    TOKEN_IDENTIFIER,
+    TOKEN_CONSTANT,
+    TOKEN_OPERATOR
+};
+
+struct Token {
+    enum TokenType type;
+    char lexeme[MAX_TOKEN_LENGTH];
+};
+
+int is_operator(char c) {
+    return c == '+' || c == '-' || c == '*' || c == '/' || c == '%' || c == '=';
+}
+
+int main() {
